@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import UserContext from '../../context/data/myContext'
 
-function footer() {
+function Footer() {
 
   const { mode } = useContext(UserContext)
 
@@ -119,4 +119,4 @@ function footer() {
   )
 }
 
-export default footer
+export default Footer

@@ -10,33 +10,98 @@ import Home from './pages/Home/Home'
 import Departments from './pages/Departments/Departments'
 import Courses from './pages/Courses/Courses'
 import Contact from './pages/Contact/Contact'
+import { AuthLayout, Login, Signup } from './components/index.js'
+import { Provider } from 'react-redux'
+import store from './store/store.js'
 
 // const router = createBrowserRouter([
 //   {
 //     path: '/',
 //     element: <Layout />,
 //     children: [
-     
+
 //     ]
 //   }
 // ])
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<Layout />}>
-      <Route path='' element={<Home />}/>
-      <Route path='about' element={<About />}/>
-      <Route path='departments' element={<Departments />}/>
-      <Route path='courses' element={<Courses />}/>
-      <Route path='contact' element={<Contact />}/>
+// const router = createBrowserRouter(
+//   createRoutesFromElements(
+//     <Route path='/' element={<Layout />}>
+//       <Route path='' element={<Home />}/>
+//       <Route path='about' element={<About />}/>
+//       <Route path='departments' element={<Departments />}/>
+//       <Route path='courses' element={<Courses />}/>
+//       <Route path='contact' element={<Contact />}/>
 
-    </Route>
-  )
-)
+//     </Route>
+//   )
+// )
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home />
+      },
+      {
+        path: "/login",
+        element: (
+          <AuthLayout authentication={false}>
+            <Login />
+          </AuthLayout>
+        ),
+      },
+      {
+        path: "/signup",
+        element: (
+          <AuthLayout authentication={false}>
+            <Signup />
+          </AuthLayout>
+        )
+      },
+      {
+        path: "/about",
+        element: (
+          <AuthLayout >
+            <About />
+          </AuthLayout>
+        )
+      },
+      {
+        path: "/departments",
+        element: (
+          <AuthLayout >
+            <Departments />
+          </AuthLayout>
+        )
+      },
+      {
+        path: "/courses",
+        element: (
+          <AuthLayout >
+            <Courses />
+          </AuthLayout>
+        )
+      },
+      {
+        path: "/contact",
+        element: (
+          <AuthLayout >
+            <Contact />
+          </AuthLayout>
+        )
+      }
+    ]
+  }
+])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <Provider store={store}>
+    <RouterProvider router={router} />
+    </Provider>
   </StrictMode>,
 )
