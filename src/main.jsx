@@ -13,6 +13,7 @@ import Contact from './pages/Contact/Contact'
 import { AuthLayout, Login, Signup } from './components/index.js'
 import { Provider } from 'react-redux'
 import store from './store/store.js'
+import Thankyou from './components/Thankyou.jsx'
 
 // const router = createBrowserRouter([
 //   {
@@ -61,7 +62,15 @@ const router = createBrowserRouter([
             <Signup />
           </AuthLayout>
         )
+      }, {
+        path: "/thankyou",
+        element: (
+          <AuthLayout >
+            <Thankyou />
+          </AuthLayout>
+        )
       },
+
       {
         path: "/about",
         element: (
@@ -101,7 +110,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </Provider>
   </StrictMode>,
 )

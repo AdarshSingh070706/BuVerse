@@ -1,5 +1,8 @@
 import React, { useState, useContext } from 'react'
 import UserContext from '../../context/data/myContext'
+import { Facebook, Twitter, Instagram, Linkedin, Send } from "lucide-react";
+import Newsletter from '../Newsletter/Newsletter';
+
 
 function Footer() {
 
@@ -8,112 +11,101 @@ function Footer() {
 
 
   return (
-    <footer className="body-font" style={{ background: mode === 'dark' ? 'rgb(30, 41, 59)' : '#30336b' }}>
-      <div className="container px-5 py-4 mx-auto flex items-center sm:flex-row flex-col">
-        {/* Logo */}
-        <div className="flex title-font font-medium items-center md:justify-start justify-center text-white">
+     <footer
+      className="text-gray-200"
+      style={{ background: mode === "dark" ? "rgb(30, 41, 59)" : "#0a3d62" }}
+    >
+      <div className="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-5 gap-8">
 
-          <span className="ml-3 text-xl">BuVerse</span>
+        <div>
+  <h2 className="font-semibold text-white mb-3">FOLLOW US</h2>
+  <ul className="space-y-2">
+    <li>
+      <a
+        // href="https://www.facebook.com/adarsh.fb"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2  text-gray-300 hover:text-white transition duration-300 cursor-pointer"
+      >
+        <Facebook className="w-4 h-4" /> Facebook
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://x.com/AdarshSingh2123?t=v3MC1qVvJYgLPYSd33Eexw&s=08"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2  text-gray-300 hover:text-white transition duration-300"
+      >
+        <Twitter className="w-4 h-4" /> Twitter
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.instagram.com/mr_adarshsingh02/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2  text-gray-300 hover:text-white transition duration-300 cursor-pointer"
+      >
+        <Instagram className="w-4 h-4" /> Instagram
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.linkedin.com/in/adarsh-singh-37596a238"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2  text-gray-300 hover:text-white transition duration-300 cursor-pointer"
+      >
+        <Linkedin className="w-4 h-4" /> LinkedIn
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+        <div>
+          <h2 className="font-semibold text-white mb-3">NEWSLETTER</h2>
+          <Newsletter />
         </div>
 
-        {/* Copyright */}
-        <p className="text-sm text-gray-300 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-400 sm:py-2 sm:mt-0 mt-4">
-          © 2025 BuVerse —
-          <a
-            href="https://x.com/AdarshSingh2123?t=v3MC1qVvJYgLPYSd33Eexw&s=08"
-            className="text-blue-300 ml-1 hover:underline"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            @partner
-          </a>
-        </p>
 
-        {/* Social Icons */}
-        <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-          {/* Facebook */}
-          <a
-            href="https://www.facebook.com/adarsh.fb"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-white transition duration-300"
-          >
-            <svg
-              fill="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
-              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-            </svg>
-          </a>
+        <div>
+          <h2 className="font-semibold text-white mb-3">BUVERSE</h2>
+          <ul className="space-y-2">
+            <li className="hover:text-white cursor-pointer text-gray-300 transition duration-300">Blogs</li>
+            <li className="hover:text-white cursor-pointer text-gray-300 transition duration-300">Milestones</li>
+            <li className="hover:text-white cursor-pointer text-gray-300 transition duration-300">Updates</li>
+          </ul>
+        </div>
 
-          {/* Twitter */}
-          <a
-            href="https://x.com/AdarshSingh2123?t=v3MC1qVvJYgLPYSd33Eexw&s=08"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-3 text-gray-300 hover:text-white transition duration-300"
-          >
-            <svg
-              fill="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
-              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-            </svg>
-          </a>
 
-          {/* Instagram */}
-          <a
-            href="https://www.instagram.com/mr_adarshsingh02/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-3 text-gray-300 hover:text-white transition duration-300"
-          >
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
-              <rect width={20} height={20} x={2} y={2} rx={5} ry={5} />
-              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
-            </svg>
-          </a>
+        <div>
+          <h2 className="font-semibold text-white mb-3">ABOUT US</h2>
+          <ul className="space-y-2">
+            <li className="hover:text-white cursor-pointer text-gray-300 transition duration-300">Careers</li>
+            <li className="hover:text-white cursor-pointer text-gray-300 transition duration-300">Research</li>
+            <li className="hover:text-white cursor-pointer text-gray-300 transition duration-300">Press</li>
+          </ul>
+        </div>
 
-          {/* LinkedIn */}
-          <a
-            href="https://www.linkedin.com/in/adarsh-singh-37596a238"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-3 text-gray-300 hover:text-white transition duration-300"
-          >
-            <svg
-              fill="currentColor"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={0}
-              className="w-5 h-5"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="none"
-                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-              />
-              <circle cx={4} cy={4} r={2} stroke="none" />
-            </svg>
-          </a>
-        </span>
+
+        <div>
+          <h2 className="font-semibold text-white mb-3">CONTACT</h2>
+          <ul className="space-y-2">
+            <li>📞 +91-8467XXXXXX</li>
+            <li>📞 +91-7564XXXXXX</li>
+            <li className="hover:text-white cursor-pointer text-gray-300 transition duration-300">FAQ</li>
+            <li className="hover:text-white cursor-pointer text-gray-300 transition duration-300">Contact</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div className="text-center text-gray-400 text-sm border-t border-gray-700 py-4">
+        © {new Date().getFullYear()} BuVerse. All rights reserved. <br />
+        Let's Travel our University
+        
       </div>
     </footer>
   )

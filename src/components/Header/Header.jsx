@@ -168,9 +168,9 @@ function Header() {
 //       </nav>
 //     </header> 
 
-<header className="shadow sticky z-50 top-0">
+
       <Container>
-        <nav className="bg-transparent  w-full lg:px-6 py-2.5">
+        <nav className="sticky inset-0 z-20 h-max max-w-full border-none rounded-none py-2  lg:px-8 lg:py-2">
           <div className="flex flex-wrap mx-auto max-w-screen-xl justify-between items-center">
             
             {/* Left side Logo */}
@@ -186,13 +186,13 @@ function Header() {
 
             {/* Center Nav */}
             <div className="hidden lg:flex lg:w-auto lg:order-1">
-              <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+              <ul className={` flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0`}>
                 {navItems.map((item) =>
                   item.active ? (
                     <li key={item.name}>
                       <button
                         onClick={() => navigate(item.slug)}
-                        className="block py-2 px-4 duration-200 hover:bg-blue-100 rounded-full text-black"
+                        className={`${mode=== "light" ? "text-black" : "text-white"}`}
                       >
                         {item.name}
                       </button>
@@ -227,7 +227,7 @@ function Header() {
           </div>
         </nav>
       </Container>
-    </header>
+ 
   
   )
 }
